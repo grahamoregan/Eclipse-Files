@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template autoinsert="true" context="java" deleted="false" description="creates an addX() method" enabled="true" name="add">public void add${type}(${type} variable) {
+	this.${collection}.add(variable);
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="assert equals" enabled="true" name="ae">assertEquals(${expected}, ${actual});
+</template>
+	<template autoinsert="true" context="java" deleted="false" description="assert false" enabled="true" name="af">assertFalse(${condition});
+</template>
+	<template autoinsert="true" context="java" deleted="false" description="assert null" enabled="true" name="an">assertNull(${obect});
+		</template>
+	<template autoinsert="true" context="java" deleted="false" description="assert not null" enabled="true" name="ann">assertNotNull(${object});
+ </template>
+	<template autoinsert="true" context="java" deleted="false" description="Assert not same" enabled="true" name="ans">assertNotSame(${expected}, ${actual});
+ </template>
+	<template autoinsert="true" context="java" deleted="false" description="assertSame" enabled="true" name="as">assertSame(${expected}, ${actual});</template>
+	<template autoinsert="true" context="java" deleted="false" description="assert true" enabled="true" name="at">assertTrue(${condition});
+		</template>
+	<template autoinsert="true" context="java" deleted="false" description="new string buffer" enabled="true" name="buffer">StringBuffer ${name} = new StringBuffer();</template>
+	<template autoinsert="true" context="java" deleted="false" description="create a static builder" enabled="true" name="builder">public static class Builder {
+
+	private ${type} ${fieldName};
+ 
+	public Builder ${fieldName}(${type} ${fieldName}) {
+		this.${fieldName} = ${fieldName};
+		return this;
+	}
+
+	public ${enclosing_type} build() {
+
+		${enclosing_type} internal = new ${enclosing_type}();
+
+		internal.${fieldName} = this.${fieldName};
+
+		return internal;
+
+	}
+
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="adds a field and matching method to a Builder" enabled="true" name="builder_field">private ${type} ${fieldName};
+ 
+public Builder ${fieldName}(${type} ${fieldName}) {
+	this.${fieldName} = ${fieldName};
+	return this;
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="create a const value" enabled="true" name="const">public static final ${type} ${name} = ${value};</template>
+	<template autoinsert="true" context="java" deleted="false" description="new static factory method" enabled="true" name="create">public static final ${enclosing_type} create(){
+		
+	${enclosing_type} ${name} = new ${enclosing_type}();
+		
+	${name}.${field} = ${field};
+		
+	return ${name};
+
+}
+</template>
+	<template autoinsert="true" context="java" deleted="false" description="get current working directory" enabled="true" name="cwd">System.getProperty("user.dir")</template>
+	<template autoinsert="true" context="java" deleted="false" description="logs message at debug level" enabled="true" name="debug">if(logger.isDebugEnabled())
+	logger.debug("${cursor}");</template>
+	<template autoinsert="true" context="java" deleted="false" description="quick ternary operator" enabled="true" name="elvis">(${primary} != null) ? ${primary} : ${alternative};</template>
+	<template autoinsert="true" context="java" deleted="false" description="commons equals builder" enabled="true" name="equals">@Override
+	public boolean equals(Object object) {
+
+		if (object != null &amp;&amp; object instanceof ${enclosing_type}) {
+
+			${enclosing_type} temp = (${enclosing_type}) object;
+
+			EqualsBuilder builder = new EqualsBuilder();
+
+			builder.append(temp.${field}, ${field});
+			 
+
+			return builder.isEquals();
+
+		}
+
+		return false;
+	}</template>
+	<template autoinsert="true" context="java" deleted="false" description="insert string.format" enabled="true" name="format">String.format("${cursor}",${var})</template>
+	<template autoinsert="true" context="java" deleted="false" description="commons builder hashcode" enabled="true" name="hashcode">@Override
+	public int hashCode() {
+
+		HashCodeBuilder builder = new HashCodeBuilder(37, 59);
+
+		builder.append(${type});
+
+		return builder.toHashCode();
+	}</template>
+	<template autoinsert="true" context="java" deleted="false" description="IllegalArgumentException" enabled="true" name="iae">if(${temp} == null)
+	throw new IllegalArgumentException("${temp} cannot be null");</template>
+	<template autoinsert="true" context="java" deleted="false" description="log message at info level" enabled="true" name="info">if(logger.isInfoEnabled())
+	logger.info("${cursor}");
+</template>
+	<template autoinsert="true" context="java" deleted="false" description="create a quick list" enabled="true" name="list">List&lt;${type}&gt; ${name} = Lists.newArrayList();</template>
+	<template autoinsert="true" context="java" deleted="false" description="sets up new Log4j logger" enabled="true" name="logger">private static final Logger logger = Logger.getLogger(${enclosing_type}.class);</template>
+	<template autoinsert="true" context="java" deleted="false" description="Creates a new map, using a java.util.HashMap as the implementation" enabled="true" name="map">Map&lt;${key},${value}&gt; name = Maps.newHashMap();</template>
+	<template autoinsert="true" context="java" deleted="false" description="mutators for map-based objects" enabled="true" name="mapmut">public ${return_type} get${capitalise}() {
+	return (${return_type}) ${internal}.get("${lower_case}");
+}
+
+public void set${capitalise}(${return_type} ${lower_case}) {
+	${internal}.put("${lower_case}", ${lower_case});
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="reader from a java.ioreader and convert to a string" enabled="true" name="reader2string">BufferedReader buffered = new BufferedReader(${reader});
+
+StringBuilder builder = new StringBuilder();
+
+for (String temp = null; ((temp = buffered.readLine()) != null);)
+	builder.append(temp).append("\n");
+
+String result = builder.toString();</template>
+	<template autoinsert="true" context="java" deleted="false" description="creates a removeX() method" enabled="true" name="remove">public boolean remove${type}(${type} variable) {
+	return this.${collection}.remove(variable);
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="RuntimeException" enabled="true" name="rte">throw new RuntimeException("${cursor}");</template>
+	<template autoinsert="true" context="java" deleted="false" description="creates a singleton class" enabled="true" name="singleton">public class ${class_name} {
+
+	private static class ${class_name}Holder {
+		private static final ${class_name} INSTANCE = new ${class_name}();
+	}
+
+	private ${class_name}() {
+	}
+
+	public static ${class_name} get() {
+		return ${class_name}Holder.INSTANCE;
+	}
+
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="creates a static factory method" enabled="true" name="static_factory_method">public static final ${enclosing_type} create() {
+
+		${enclosing_type} type = new ${enclosing_type}();
+
+		return type;
+	}</template>
+	<template autoinsert="true" context="java" deleted="false" description="print to standard error" enabled="true" id="org.eclipse.jdt.ui.templates.syserr" name="syserr">System.err.println(${word_selection}${});${cursor}</template>
+	<template autoinsert="true" context="java" deleted="false" description="print to standard out" enabled="true" id="org.eclipse.jdt.ui.templates.sysout" name="sysout">System.out.println(${word_selection}${});${cursor}</template>
+	<template autoinsert="true" context="java" deleted="false" description="print current method to standard out" enabled="true" id="org.eclipse.jdt.ui.templates.systrace" name="systrace">System.out.println("${enclosing_type}.${enclosing_method}()");</template>
+	<template autoinsert="false" context="java" deleted="false" description="test method" enabled="true" id="org.eclipse.jdt.ui.templates.test" name="test">public void test${name}() throws Exception {
+	${cursor} 
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="assign the clock time to a local variable" enabled="true" name="time">long ${now} = System.currentTimeMillis();</template>
+	<template autoinsert="true" context="java" deleted="false" description="Get the system temp directory" enabled="true" name="tmpdir">System.getProperty("java.io.tmpdir")</template>
+	<template autoinsert="true" context="java" deleted="false" description="commons lang ToStringBuilder" enabled="true" name="tostring">@Override
+public String toString() {
+	return new ToStringBuilder(this).append(${cursor}).toString();
+}</template>
+	<template autoinsert="true" context="java" deleted="false" description="creates logging warning message" enabled="true" name="warn">logger.warn("${cursor}");</template>
+</templates>
