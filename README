@@ -1,0 +1,1 @@
+This contains two files; a set of editor templates for Java and my formatting configuration. The templates include some short cuts for creating logging methods using Log4j (debug(), info()), test methods for JUnit (ae -> assertEquals($expected, $actual)) as well as commons-lang implementations of common methods like toString() using their builder classes.
