@@ -1,0 +1,9 @@
+Mule Docker has been deleted
+
+Mule now builds the docker container rather than just copying files into a running container
+
+WS Mocks -> gmc-connect
+
+hee-tis -> revalidation
+
+http://hee-tis-jenkinsmain.westeurope.cloudapp.azure.com:9090/job/hee-tis/configure the params passed to docker need to change from demo -> revalidation
